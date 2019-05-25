@@ -6,5 +6,10 @@ pipeline {
         build 'mydevOpsMaven'
       }
     }
+    stage('Deploy') {
+      steps {
+        bat(returnStatus: true, script: 'cls echo Deleting class file del *.class echo compiling javac *.java java App echo All Done!!', returnStdout: true)
+      }
+    }
   }
 }
